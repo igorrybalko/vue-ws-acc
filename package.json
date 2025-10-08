@@ -1,0 +1,35 @@
+{
+  "name": "vue-ws-acc",
+  "version": "0.1.0",
+  "main": "dist/vue-ws-acc.umd.js",
+  "module": "dist/vue-ws-acc.es.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "accordion",
+    "component"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Ihor Rybalko",
+  "license": "MIT",
+  "description": "Vue 3 accordion component",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "sass": "^1.93.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
