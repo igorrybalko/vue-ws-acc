@@ -1,17 +1,10 @@
 {
   "name": "vue-ws-acc",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "dist/vue-ws-acc.umd.js",
   "module": "dist/vue-ws-acc.es.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/vue-ws-acc.es.js",
-      "require": "./dist/vue-ws-acc.umd.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist"
   ],
