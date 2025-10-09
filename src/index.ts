@@ -1,9 +1,13 @@
 import WsAcc from './WsAcc.vue';
 
-import type { App } from 'vue';
+import type { App, Plugin } from 'vue';
 
-WsAcc.install = (app: App) => {
-    app.component('VueWsAcc', WsAcc);
+type SFCWithInstall<T> = T & Plugin;
+
+const VueWsAcc = WsAcc as SFCWithInstall<typeof WsAcc>;
+
+VueWsAcc.install = (app: App) => {
+  app.component('VueWsAcc', WsAcc);
 };
 
-export default WsAcc;
+export default VueWsAcc;

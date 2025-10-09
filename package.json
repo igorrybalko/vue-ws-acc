@@ -5,6 +5,13 @@
   "module": "dist/vue-ws-acc.es.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-ws-acc.es.js",
+      "require": "./dist/vue-ws-acc.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -20,6 +27,10 @@
   },
   "author": "Ihor Rybalko",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorrybalko/vue-ws-acc"
+  },
   "description": "Vue 3 accordion component",
   "peerDependencies": {
     "vue": "^3.0.0"
