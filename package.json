@@ -1,6 +1,6 @@
 {
   "name": "vue-ws-acc",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "dist/vue-ws-acc.umd.js",
   "module": "dist/vue-ws-acc.es.js",
   "types": "dist/index.d.ts",
@@ -20,6 +20,7 @@
   },
   "author": "Ihor Rybalko",
   "license": "MIT",
+  "homepage": "https://webstep.top/javascript/vue-accordion-component/",
   "repository": {
     "type": "git",
     "url": "https://github.com/igorrybalko/vue-ws-acc"

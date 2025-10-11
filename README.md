@@ -2,11 +2,16 @@
 A simple and lightweight **Vue 3 accordion component** plugin.  
 Supports both **global plugin registration** and **local component usage**.
 
+Demo: https://vue.webstep.top/ws-acc
+
 ## Installation
 
 ```bash
 # via npm
 npm install vue-ws-acc
+
+# or via yarn
+yarn add vue-ws-acc
 ```
 ## Usage
 
@@ -51,3 +56,12 @@ export default defineComponent({
 });
 </script>
 ```
+
+## Props
+| Prop       | Type    | Default | Description                    |
+| ---------- | ------- | ------- | ------------------------------ |
+| `items`    | Array   | `[]`    | Array of accordion items       |
+| `simple`   | Boolean | `false` | Disable optional styles        |
+| `multi`    | Boolean | `false` | Allow multiple sections open   |
+
+Example item: { title: string, content: string }
