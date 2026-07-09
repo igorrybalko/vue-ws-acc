@@ -1,28 +1,40 @@
 <template>
-    <div class="vws-acc" :class="{ 'vws-acc--styled': !simple }">
-        <div
-            class="vws-acc__item"
-            v-for="(item, i) in items"
-            :key="'pa_' + i"
-            :class="{ active: active.includes(i) }"
+  <div class="vws-acc" :class="{ 'vws-acc--styled': !simple }">
+    <div
+      class="vws-acc__item"
+      v-for="(item, i) in items"
+      :key="'pa_' + i"
+      :class="{ active: active.includes(i) }"
+    >
+      <h3 class="vws-acc__title">
+        <button
+          @click="showHide(i)"
+          type="button"
+          :aria-expanded="active.includes(i)"
+          :aria-controls="'sect' + i + uniq"
+          :id="'ac' + i + uniq + 'id'"
         >
-            <div class="vws-acc__title" @click="showHide(i)">
-                {{ item.title }}
-                <div class="vws-acc__pm"></div>
-            </div>
-            <div
-                class="vws-acc__cont"
-                ref="toggleElRef"
-                :style="{ height: heights[i] + 'px' }"
-            >
-                <div class="vws-acc__cont-inner" v-html="item.content"></div>
-            </div>
-        </div>
+          {{ item.title }}
+          <div class="vws-acc__pm"></div>
+        </button>
+      </h3>
+      <div
+        class="vws-acc__cont"
+        ref="toggleElRef"
+        :style="{ height: heights[i] + 'px' }"
+        role="region"
+        :id="'sect' + i + uniq"
+        :aria-labelledby="'ac' + i + uniq + 'id'"
+        :inert="!active.includes(i)"
+      >
+        <div class="vws-acc__cont-inner" v-html="item.content"></div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, useTemplateRef } from 'vue';
 
 interface Props {
   items: {
@@ -36,7 +48,9 @@ interface Props {
 const active = ref<number[]>([]);
 const heights = ref<number[]>([]);
 
-const toggleElRef = ref<NodeListOf<HTMLDivElement>>();
+const uniq = computed(() => Math.random().toString(36).slice(2, 6) + 'wa');
+
+const toggleElRef = useTemplateRef<HTMLDivElement[]>('toggleElRef');  
 
 const props = defineProps<Props>();
 
@@ -82,14 +96,23 @@ onMounted(() => {
 }
 
 .vws-acc__title {
-  cursor: pointer;
-  user-select: none;
+  margin: 0;
+  button {
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+  }
 }
 
 .vws-acc--styled {
   .vws-acc__title {
-    font-weight: bold;
-    padding: 10px;
+    button {
+      font-weight: bold;
+      padding: 10px;
+      background: transparent;
+      text-align: left;
+    }
   }
 
   .vws-acc__cont-inner {

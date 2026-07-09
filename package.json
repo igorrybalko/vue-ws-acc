@@ -1,6 +1,6 @@
 {
   "name": "vue-ws-acc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/vue-ws-acc.umd.js",
   "module": "dist/vue-ws-acc.es.js",
   "types": "dist/index.d.ts",
@@ -30,11 +30,13 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.7.0",
     "@vitejs/plugin-vue": "^6.0.1",
-    "sass": "^1.93.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.9",
-    "vite-plugin-dts": "^4.5.4"
+    "typescript": "^7.0.2",
+    "vite": "^8.1.4",
+    "vite-plugin-dts": "^5.0.3"
+  },
+  "dependencies": {
+    "@types/node": "^26.1.1",
+    "sass": "^1.101.0"
   }
 }
